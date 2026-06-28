@@ -19,7 +19,6 @@ import {
   Send,
   ShieldCheck,
   Sparkles,
-  Star,
   Trees,
   Wrench,
 } from "lucide-react";
@@ -103,15 +102,14 @@ const gallery = [
 
 const proof = [
   "Official site states bespoke SIPs panel garden rooms for Manchester and the North West.",
-  "Verified contact route: email and mobile number published on Trafford Garden Rooms' own website.",
-  "Real project photography used throughout the site, not stock proof.",
-  "Facebook currently shows Not yet rated across 3 reviews for Trafford Garden Rooms.",
+  "Email and mobile contact are available for garden room enquiries.",
+  "Project photography shows finished garden rooms, glazing, decking and usable outdoor spaces.",
 ];
 
 const testimonials = [
   {
     name: "Elle Flannery",
-    source: "Facebook review",
+    source: "Customer review",
     body: "Amazing service and the room is perfect. They are extremely helpful and it was put up so quickly.",
   },
 ];
@@ -403,31 +401,20 @@ export default function Page() {
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-start">
           <Reveal>
             <div>
-              <p className="text-sm font-black uppercase text-[#8b6a30]">Facebook reviews</p>
-              <h2 className="mt-3 text-4xl font-black leading-tight sm:text-6xl">Customer feedback from the Trafford page.</h2>
+              <p className="text-sm font-black uppercase text-[#8b6a30]">Customer testimonial</p>
+              <h2 className="mt-3 text-4xl font-black leading-tight sm:text-6xl">Feedback from a garden room customer.</h2>
               <p className="mt-5 text-lg font-semibold leading-8 text-iron/68">
-                Trafford Garden Rooms currently shows Not yet rated across 3 Facebook reviews. The public review visible without login is featured here.
+                A finished garden room should feel easy from enquiry to handover: clear advice, tidy work and a space the customer can use straight away.
               </p>
               <a href={facebookReviewsUrl} target="_blank" rel="noreferrer">
                 <Button className="mt-8 rounded-lg bg-[#171a16] text-white hover:bg-[#d0a04d] hover:text-[#171a16]">
-                  <Facebook size={18} /> Open Facebook reviews
+                  <Facebook size={18} /> View Facebook page
                 </Button>
               </a>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="grid gap-5">
-              <div className="rounded-lg border border-iron/10 bg-white p-6 shadow-premium">
-                <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                  <p className="text-sm font-black uppercase text-[#8b6a30]">Facebook rating</p>
-                  <span className="rounded-lg bg-[#f5f2e8] px-3 py-2 text-sm font-black text-iron/70">Not yet rated · 3 reviews</span>
-                </div>
-                <div className="flex gap-1 text-[#d0a04d]" aria-label="Facebook recommendation">
-                  {[0, 1, 2, 3, 4].map((item) => (
-                    <Star key={item} size={22} fill="currentColor" />
-                  ))}
-                </div>
-              </div>
               {testimonials.map((testimonial) => (
                 <article key={testimonial.name} className="rounded-lg bg-white p-7 shadow-premium">
                   <p className="text-xl font-black leading-8 text-iron">&quot;{testimonial.body}&quot;</p>
