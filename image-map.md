@@ -4,7 +4,8 @@
 
 - Business: Trafford Garden Rooms
 - Official site: https://www.traffordgardenrooms.com/
-- Supplied Facebook: https://www.facebook.com/traffordgardenservices/
+- Correct Facebook page used for testimonials: https://www.facebook.com/TraffordGardenRooms/
+- Supplied Facebook `traffordgardenservices` resolves to a separate maintenance-gardening page and is not used for garden-room testimonials.
 - Supplied Maps route resolved to Trafford Garden Rooms.
 - Address: Bradley Lane, Stretford, Manchester M32 8RH
 - Email verified on official site: traffordgardenrooms@gmail.com
@@ -13,8 +14,18 @@
 
 ## Map
 
-- Google Maps: https://www.google.com/maps/place/Trafford+Garden+Rooms/@53.4351984,-2.3235411,17z/
-- Embed used: Google Maps query for Trafford Garden Rooms, Bradley Lane, Stretford M32 8RH.
+- Google Maps was used for initial identity verification only.
+- Per Dean request on 2026-06-28, the Google Maps website section and map iframe were removed.
+
+## Facebook Reviews
+
+- Trafford Garden Rooms Facebook reviews URL: https://www.facebook.com/TraffordGardenRooms/reviews
+- Logged-out Facebook view on 2026-06-28 showed: `Not yet rated (3 Reviews)`.
+- Public visible review used:
+  - Author: Elle Flannery
+  - Source label: Facebook review
+  - Text used: "Amazing service and the room is perfect. They are extremely helpful and it was put up so quickly."
+- The supplied `traffordgardenservices` page showed `100% recommend (68 Reviews)`, but it belongs to Trafford Garden Services, Urmston, not the garden-room business, so it is excluded from the site copy.
 
 ## Asset Tier
 

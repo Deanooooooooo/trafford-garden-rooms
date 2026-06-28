@@ -19,6 +19,7 @@ import {
   Send,
   ShieldCheck,
   Sparkles,
+  Star,
   Trees,
   Wrench,
 } from "lucide-react";
@@ -34,11 +35,10 @@ const email = "traffordgardenrooms@gmail.com";
 const phoneDisplay = "07570 094 600";
 const phoneHref = "tel:07570094600";
 const siteUrl = "https://www.traffordgardenrooms.com/";
-const facebookUrl = "https://www.facebook.com/traffordgardenservices/";
+const facebookUrl = "https://www.facebook.com/TraffordGardenRooms/";
+const facebookReviewsUrl = "https://www.facebook.com/TraffordGardenRooms/reviews";
 const mapsUrl =
   "https://www.google.com/maps/place/Trafford+Garden+Rooms/@53.4351984,-2.3235411,17z/data=!3m1!4b1!4m6!3m5!1s0x487bad5c057331bd:0x980123cf8e1fe232!8m2!3d53.4351984!4d-2.3209662!16s%2Fg%2F1tkmm2sp";
-const mapEmbedUrl =
-  "https://maps.google.com/maps?q=Trafford%20Garden%20Rooms%20Bradley%20Lane%20Stretford%20M32%208RH&z=14&output=embed";
 const address = "Bradley Lane, Stretford, Manchester M32 8RH";
 const mailSubject = "Garden room enquiry";
 const mailBody = [
@@ -105,7 +105,15 @@ const proof = [
   "Official site states bespoke SIPs panel garden rooms for Manchester and the North West.",
   "Verified contact route: email and mobile number published on Trafford Garden Rooms' own website.",
   "Real project photography used throughout the site, not stock proof.",
-  "Google Maps location verified at Bradley Lane, Stretford.",
+  "Facebook currently shows Not yet rated across 3 reviews for Trafford Garden Rooms.",
+];
+
+const testimonials = [
+  {
+    name: "Elle Flannery",
+    source: "Facebook review",
+    body: "Amazing service and the room is perfect. They are extremely helpful and it was put up so quickly.",
+  },
 ];
 
 function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -195,7 +203,7 @@ export default function Page() {
           <nav className="hidden items-center gap-7 text-base font-black text-white/86 md:flex">
             <a className="hover:text-white" href="#rooms">Rooms</a>
             <a className="hover:text-white" href="#projects">Projects</a>
-            <a className="hover:text-white" href="#contact">Contact</a>
+            <a className="hover:text-white" href="#reviews">Reviews</a>
           </nav>
           <a href={mailtoUrl}>
             <Button className="min-h-11 rounded-lg bg-[#d0a04d] px-4 text-[#171a16] hover:bg-white">
@@ -233,9 +241,9 @@ export default function Page() {
                     <Mail size={18} /> Start an enquiry
                   </Button>
                 </a>
-                <a href={mapsUrl} target="_blank" rel="noreferrer">
+                <a href="#reviews">
                   <Button variant="secondary" className="rounded-lg border-white/18 bg-white/10 text-white hover:bg-white/18">
-                    Google Maps <ArrowUpRight size={18} />
+                    Reviews <ArrowUpRight size={18} />
                   </Button>
                 </a>
               </div>
@@ -391,12 +399,60 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="contact" className="bg-[#e8ecde] px-4 py-24 sm:px-6">
-        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-[0.95fr_1.05fr]">
+      <section id="reviews" className="bg-[#e8ecde] px-4 py-24 sm:px-6">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-start">
           <Reveal>
             <div>
-              <p className="text-sm font-black uppercase text-[#8b6a30]">Contact</p>
-              <h2 className="mt-3 text-4xl font-black leading-tight sm:text-6xl">Plan a garden room from Bradley Lane, Stretford.</h2>
+              <p className="text-sm font-black uppercase text-[#8b6a30]">Facebook reviews</p>
+              <h2 className="mt-3 text-4xl font-black leading-tight sm:text-6xl">Customer feedback from the Trafford page.</h2>
+              <p className="mt-5 text-lg font-semibold leading-8 text-iron/68">
+                Trafford Garden Rooms currently shows Not yet rated across 3 Facebook reviews. The public review visible without login is featured here.
+              </p>
+              <a href={facebookReviewsUrl} target="_blank" rel="noreferrer">
+                <Button className="mt-8 rounded-lg bg-[#171a16] text-white hover:bg-[#d0a04d] hover:text-[#171a16]">
+                  <Facebook size={18} /> Open Facebook reviews
+                </Button>
+              </a>
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="grid gap-5">
+              <div className="rounded-lg border border-iron/10 bg-white p-6 shadow-premium">
+                <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-sm font-black uppercase text-[#8b6a30]">Facebook rating</p>
+                  <span className="rounded-lg bg-[#f5f2e8] px-3 py-2 text-sm font-black text-iron/70">Not yet rated · 3 reviews</span>
+                </div>
+                <div className="flex gap-1 text-[#d0a04d]" aria-label="Facebook recommendation">
+                  {[0, 1, 2, 3, 4].map((item) => (
+                    <Star key={item} size={22} fill="currentColor" />
+                  ))}
+                </div>
+              </div>
+              {testimonials.map((testimonial) => (
+                <article key={testimonial.name} className="rounded-lg bg-white p-7 shadow-premium">
+                  <p className="text-xl font-black leading-8 text-iron">&quot;{testimonial.body}&quot;</p>
+                  <div className="mt-6 flex items-center justify-between gap-4 border-t border-iron/10 pt-5">
+                    <div>
+                      <p className="font-black">{testimonial.name}</p>
+                      <p className="text-sm font-bold text-iron/52">{testimonial.source}</p>
+                    </div>
+                    <CheckCircle2 className="text-[#8b6a30]" size={24} />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="contact" className="bg-white px-4 py-20 sm:px-6">
+        <div className="mx-auto max-w-7xl">
+          <Reveal>
+            <div className="grid gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-end">
+              <div>
+                <p className="text-sm font-black uppercase text-[#8b6a30]">Contact</p>
+                <h2 className="mt-3 text-4xl font-black leading-tight sm:text-6xl">Plan a garden room from Bradley Lane, Stretford.</h2>
+              </div>
               <div className="mt-8 grid gap-3">
                 <a className="flex items-center gap-3 rounded-lg bg-white p-4 font-black shadow-premium" href={mailtoUrl}>
                   <Mail className="text-[#8b6a30]" size={22} /> {email}
@@ -404,15 +460,10 @@ export default function Page() {
                 <a className="flex items-center gap-3 rounded-lg bg-white p-4 font-black shadow-premium" href={phoneHref}>
                   <Phone className="text-[#8b6a30]" size={22} /> {phoneDisplay}
                 </a>
-                <a className="flex items-center gap-3 rounded-lg bg-white p-4 font-black shadow-premium" href={mapsUrl} target="_blank" rel="noreferrer">
+                <div className="flex items-center gap-3 rounded-lg bg-white p-4 font-black shadow-premium">
                   <MapPin className="text-[#8b6a30]" size={22} /> {address}
-                </a>
+                </div>
               </div>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="overflow-hidden rounded-lg bg-white shadow-premium">
-              <iframe title="Trafford Garden Rooms map" src={mapEmbedUrl} className="h-[480px] w-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
             </div>
           </Reveal>
         </div>
@@ -438,9 +489,6 @@ export default function Page() {
             </a>
             <a aria-label="Facebook" className="grid h-11 w-11 place-items-center rounded-lg bg-white/10 text-white hover:bg-[#d0a04d] hover:text-[#171a16]" href={facebookUrl} target="_blank" rel="noreferrer">
               <Facebook size={20} />
-            </a>
-            <a aria-label="Google Maps" className="grid h-11 w-11 place-items-center rounded-lg bg-white/10 text-white hover:bg-[#d0a04d] hover:text-[#171a16]" href={mapsUrl} target="_blank" rel="noreferrer">
-              <MapPin size={20} />
             </a>
             <a aria-label="Official website" className="grid h-11 w-11 place-items-center rounded-lg bg-white/10 text-white hover:bg-[#d0a04d] hover:text-[#171a16]" href={siteUrl} target="_blank" rel="noreferrer">
               <ArrowUpRight size={20} />
