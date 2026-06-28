@@ -22,8 +22,10 @@
 - Desktop hero/form screenshot: `qa-live-desktop-hero.png`
 - Desktop projects screenshot: `qa-live-projects.png`
 - Desktop contact/footer screenshot: `qa-live-contact-footer.png`
+- Desktop reviews/no-map screenshot: `qa-live-reviews-no-map-desktop.png`
 - Mobile hero screenshot: `qa-live-mobile-hero.png`
 - Mobile form screenshot: `qa-live-mobile-form.png`
+- Mobile reviews/no-map screenshot: `qa-live-reviews-no-map-mobile.png`
 
 ## Live Checks
 
@@ -35,6 +37,7 @@
 - Live `.nojekyll`: 200.
 - One H1.
 - One primary form.
+- Zero iframes after map removal.
 - Verified mailto route: `traffordgardenrooms@gmail.com`.
 - Map iframe removed per Dean request.
 - Facebook reviews section present with current public page status: `Not yet rated · 3 reviews`.
